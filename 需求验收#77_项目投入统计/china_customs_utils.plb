@@ -1,0 +1,70 @@
+WHENEVER SQLERROR EXIT FAILURE ROLLBACK;
+
+CREATE OR REPLACE PACKAGE BODY china_customs_utils AS
+
+
+---------------------------------------------------------------------------
+-- Function will the total actuals to date for the special work item set that a
+-- given resource has on his/her timesheets for the current and
+-- previous time period for a given period type.
+
+  FUNCTION Get_Resource_Actuals
+---------------------------------------------------------------------------
+        (p_resource_user_id   IN NUMBER,
+         p_period_type_id     IN NUMBER,
+         p_work_item_set_id IN STRING)
+        RETURN NUMBER
+  IS
+
+l_total number;
+
+BEGIN
+
+    SELECT SUM(ae.actual_effort) actuals_to_date
+    INTO   l_total
+    FROM   tm_time_sheets tts2,
+           tm_time_sheet_lines tsl,
+           tm_actuals act,
+           tm_actuals_effort ae,
+           rsc_resources r
+    WHERE  (tsl.work_item_type, tsl.work_item_id) IN
+        (SELECT distinct tsl.work_item_type, tsl.work_item_id
+         FROM
+          tm_time_sheet_lines tsl,
+          tm_time_sheets tts,
+          ktmg_periods p,
+          ktmg_periods pc,
+          rsc_resources r
+         WHERE pc.start_date < CURRENT_DATE
+         AND  pc.end_date >= trunc(CURRENT_DATE)
+         AND  pc.period_type_id = p_period_type_id
+         AND  p.period_type_id = pc.period_type_id
+         AND  (p.period_id = pc.period_id
+                OR  p.seq = pc.seq - 1)
+         AND  tts.period_id = p.period_id
+         AND  tts.status_code != 5 -- cancelled
+         AND  tts.resource_id = r.resource_id
+         AND  r.user_id = p_resource_user_id
+         AND tsl.work_item_set_id = p_work_item_set_id
+         AND  tsl.time_sheet_id = tts.time_sheet_id)
+    AND    act.time_sheet_line_id = tsl.time_sheet_line_id
+    AND    act.totals_flag = 'Y'
+    AND    ae.actuals_id = act.actuals_id
+    AND    tts2.time_sheet_id = tsl.time_sheet_id
+    AND    tts2.resource_id = r.resource_id
+    AND    r.user_id = p_resource_user_id
+    AND    tts2.status_code != 5; -- cancelled
+
+    return(l_total);
+
+END;
+
+END china_customs_utils;
+/
+
+
+SET ARRAYSIZE 2;
+SET PAGESIZE 2000;
+
+SHOW ERRORS PACKAGE BODY china_customs_utils;
+
