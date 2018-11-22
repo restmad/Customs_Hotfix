@@ -1,3 +1,5 @@
 1. 部署 hot fix 951-HOTFIX-QCIM1L270160-QCCR1L270160-V1.jar
 2. 运行脚本 ppm_object_storage_952_1.sql
-3. 在server.conf 里添加 com.kintana.core.server.OBJECT_STORAGE_ADAPTER_CLASS=com.kintana.core.util.ObjectStorageUtils
+3. 在server.conf 里添加 
+com.kintana.core.server.OBJECT_STORAGE_ADAPTER_CLASS=com.kintana.core.util.ObjectStorageUtils
+com.kintana.core.server.OBJECT_STORAGE_STORE_TRANSFER_FILES=true
