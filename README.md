@@ -17,6 +17,6 @@ If bundle name is 951-HOTFIX-EXCEL.jar, the corresponding deployment command is
 ## Steps:
     1. Stop server (kStop.sh -now)
     2. run sh kDeploy.sh -hotfix 951-HOTFIX-EXCEL.jar
-    3. run sh kDeploy.sh -hotfix 951-HOTFIX-EXCEL.jar
+    3. run sh kDeploy.sh -hotfix 951-HOTFIX-TAILOR.jar
 
     
