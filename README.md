@@ -23,7 +23,7 @@ If you meet file conflict when Deploying hotfix, please use below command. Be ca
     2. run sh kDeploy.sh -hotfix 951-HOTFIX-EXCEL.jar                                 (需求验收#30_导入项目计划)
     3. run sh kDeploy.sh -hotfix 951-HOTFIX-TAILOR.jar                                (需求验收#40_制定裁剪报告)
     4. run sh kDeploy.sh -hotfix 951-HOTFIX-RISK_TIMESHEET.jar                        (需求验收#20_个人周报)
-    5. run sh kDeploy.sh -legacy-hotfix 951-HOTFIX-QCIM1L10000-QCCR1L10000-V2.jar     (需求验收#12_管理信息)
+    5. run sh kDeploy.sh -legacy-hotfix <font color=##FF4500>951-HOTFIX-QCIM1L10000-QCCR1L10000-V2.jar  </font>   (需求验收#12_管理信息)
     6. run sh kDeploy.sh -legacy-hotfix 951-HOTFIX-QCIM1L10002-V2.jar                 (需求验收#37_基线管理)
     7. run sh kDeploy.sh -i PluginQuality                                             (需求验收#69_测试管理度量)
     8. run sh kDeploy.sh -i PluginQualityVPQ                                          (需求验收#69_测试管理度量)
