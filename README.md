@@ -24,9 +24,10 @@ If you meet file conflict when Deploying hotfix, please use below command. Be ca
     3. run sh kDeploy.sh -hotfix 951-HOTFIX-TAILOR.jar                                (需求验收#40_制定裁剪报告)
     4. run sh kDeploy.sh -hotfix 951-HOTFIX-RISK_TIMESHEET.jar                        (需求验收#20_个人周报)
     5. run sh kDeploy.sh -legacy-hotfix  951-HOTFIX-QCIM1L10000-QCCR1L10000-V2.jar    (需求验收#12_管理信息)
-    6. run sh kDeploy.sh -legacy-hotfix  951-HOTFIX-QCIM1L10002-V2.jar                (需求验收#37_基线管理)
+    6. run sh kDeploy.sh -legacy-hotfix  951-HOTFIX-QCIM1L10002-V3.jar                (需求验收#37_基线管理)
     7. run sh kDeploy.sh -i PluginQuality                                             (需求验收#69_测试管理度量)
     8. run sh kDeploy.sh -i PluginQualityVPQ                                          (需求验收#69_测试管理度量)
+	9. run sh kDeploy.sh -hotfix 951-HOTFIX-QCIM1L270160-QCCR1L270160-V1.jar          (object_storage)
     
 
 
@@ -36,5 +37,6 @@ If you meet file conflict when Deploying hotfix, please use below command. Be ca
 	3. 执行 cc_resources_in_project_v.sql      (需求验收#77_项目投入统计)
 	4. 执行 PM_BASELINES_APPROVE_STATUS.sql    (需求验收#37_基线管理)
 	5. 执行 cc_tasks_progress_v.sql			   (需求验收#74_项目周报)
+	6. 执行 ppm_object_storage_952_1.sql       (object_storage)
 
     
