@@ -27,7 +27,7 @@ If you meet file conflict when Deploying hotfix, please use below command. Be ca
     6. run sh kDeploy.sh -legacy-hotfix  951-HOTFIX-QCIM1L10002-V3.jar                (需求验收#37_基线管理)
     7. run sh kDeploy.sh -i PluginQuality                                             (需求验收#69_测试管理度量)
     8. run sh kDeploy.sh -i PluginQualityVPQ                                          (需求验收#69_测试管理度量)
-	9. run sh kDeploy.sh -hotfix 951-HOTFIX-QCIM1L270160-QCCR1L270160-V1.jar          (object_storage)
+	9. run sh kDeploy.sh -hotfix 951-HOTFIX-QCIM1L270160-QCCR1L270160-V1.jar          (object_storage 暂缓)
     
 
 
@@ -37,6 +37,15 @@ If you meet file conflict when Deploying hotfix, please use below command. Be ca
 	3. 执行 cc_resources_in_project_v.sql      (需求验收#77_项目投入统计)
 	4. 执行 PM_BASELINES_APPROVE_STATUS.sql    (需求验收#37_基线管理)
 	5. 执行 cc_tasks_progress_v.sql			   (需求验收#74_项目周报)
-	6. 执行 ppm_object_storage_952_1.sql       (object_storage)
+	6. 执行 ppm_object_storage_952_1.sql       (object_storage 暂缓)
+	7. 执行 cc_tasks_progress_by_month.sql     (需求验收#74_项目周报)
+	8. 执行 cc_resources_by_month_v.sql        (需求验收#77_项目投入统计)
+	
+
+## Server.conf
+
+    #com.kintana.core.server.OBJECT_STORAGE_ADAPTER_CLASS=com.kintana.core.util.ObjectStorageUtils
+	com.kintana.core.server.ENABLE_IMPORT_EXPORT_EXCEL_IN_WORKPLAN=true	
+	
 
     

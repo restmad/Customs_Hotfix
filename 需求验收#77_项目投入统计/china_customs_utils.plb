@@ -33,14 +33,9 @@ BEGIN
           tm_time_sheet_lines tsl,
           tm_time_sheets tts,
           ktmg_periods p,
-          ktmg_periods pc,
           rsc_resources r
-         WHERE pc.start_date < CURRENT_DATE
-         AND  pc.end_date >= trunc(CURRENT_DATE)
-         AND  pc.period_type_id = p_period_type_id
-         AND  p.period_type_id = pc.period_type_id
-         AND  (p.period_id = pc.period_id
-                OR  p.seq = pc.seq - 1)
+         WHERE 
+          p.period_type_id = p_period_type_id
          AND  tts.period_id = p.period_id
          AND  tts.status_code != 5 -- cancelled
          AND  tts.resource_id = r.resource_id
