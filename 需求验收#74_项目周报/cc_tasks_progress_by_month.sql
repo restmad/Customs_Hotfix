@@ -1,5 +1,5 @@
 create or replace force view cc_tasks_progress_by_month_v as
-SELECT main.*, round(PERC_COMPLETE, 4)||'%' complete
+SELECT main.*, tk.work_plan_id, round(PERC_COMPLETE, 4)||'%' complete
   FROM (  SELECT ttslv.work_item_set project_name,
                     ttslv.work_item task_name,
                     ttslv.description,
@@ -29,7 +29,6 @@ SELECT main.*, round(PERC_COMPLETE, 4)||'%' complete
                             (SELECT pm_utils.get_task_path (kproj.task_id)
                                FROM DUAL)
                                description,
-                            --kproj.description,
                             tsl.state
                        FROM tm_project_tasks_lite_v kproj,
                             tm_time_sheet_lines tsl,

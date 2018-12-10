@@ -1,5 +1,5 @@
 create or replace force view cc_tasks_progress_v as
-SELECT main.*, round(PERC_COMPLETE, 4)||'%' complete
+SELECT main.*, tk.work_plan_id, round(PERC_COMPLETE, 4)||'%' complete
   FROM (  SELECT ttslv.work_item_set project_name,
                  ttslv.work_item task_name,
                  ttslv.description,
