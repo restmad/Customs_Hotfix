@@ -8,17 +8,14 @@ SELECT main.*, round(PERC_COMPLETE, 4)||'%' complete
                     ttslv.work_item_id task_id,
                     ttslv.long_name,
                     ttslv.fiscal_period_id,
-                  
                     ktmg_perf.Work_Item_Actuals (work_item_id,
                                                  work_item_type_code)
                        ACTUALS_TO_DATE,
                     SUM (
                        ttslv.actual_effort)
                        actual_time_current
-                    
                FROM (SELECT tp.period_id tp_period_id,
                             ae.actual_effort,
-                          
                             fp.fiscal_period_id,
                             FP.LONG_NAME,
                             tsl.time_sheet_line_id,
@@ -43,17 +40,14 @@ SELECT main.*, round(PERC_COMPLETE, 4)||'%' complete
                             tm_actuals_effort ae,
                             ktmg_period_types pt,
                             knta_lookups lu1
-                      WHERE           --tsl.work_item_id = wav.work_item_id(+)
-                                --AND tsl.work_item_type = wav.work_item_type_code(+)
-                                tsl.work_item_type = 'TASK'
+                      WHERE     
+                            tsl.work_item_type = 'TASK'
                             AND kproj.task_id = tsl.work_item_id
                             AND ts.time_sheet_id = tsl.time_sheet_id
                             AND lu1.lookup_type = 'TMG - Work Item Types'
                             AND lu1.lookup_code = tsl.work_item_type
-                           
                             and TP.START_DATE < fp.end_date
                             and TP.END_DATE >= fp.start_date
-                          
                             AND tsl.time_sheet_id = ts.time_sheet_id
                             AND ts.period_id = tp.period_id
                             AND ta.time_sheet_line_id = tsl.time_sheet_line_id
