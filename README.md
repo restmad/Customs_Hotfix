@@ -28,7 +28,7 @@ If you meet file conflict when Deploying hotfix, please use below command. Be ca
     7. run sh kDeploy.sh -i PluginQuality                                             (需求验收#69_测试管理度量)
     8. run sh kDeploy.sh -i PluginQualityVPQ                                          (需求验收#69_测试管理度量)
 	9. run sh kDeploy.sh -hotfix 951-HOTFIX-QCIM1L270160-QCCR1L270160.jar             (object_storage 暂缓)
-   10. run sh kDeploy.sh -hotfix 951-HOTFIX-FORBID_ATTACHMENT.jar                     (禁止上传， 注意：只能部署在对外接入网)
+    10. run sh kDeploy.sh -hotfix 951-HOTFIX-FORBID_ATTACHMENT.jar                     (禁止上传， 注意：只能部署在对外接入网)
     
 
 
