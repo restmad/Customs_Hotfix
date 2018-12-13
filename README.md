@@ -27,7 +27,8 @@ If you meet file conflict when Deploying hotfix, please use below command. Be ca
     6. run sh kDeploy.sh -legacy-hotfix  951-HOTFIX-QCIM1L10002-V3.jar                (需求验收#37_基线管理)
     7. run sh kDeploy.sh -i PluginQuality                                             (需求验收#69_测试管理度量)
     8. run sh kDeploy.sh -i PluginQualityVPQ                                          (需求验收#69_测试管理度量)
-	9. run sh kDeploy.sh -hotfix 951-HOTFIX-QCIM1L270160-QCCR1L270160-V1.jar          (object_storage 暂缓)
+	9. run sh kDeploy.sh -hotfix 951-HOTFIX-QCIM1L270160-QCCR1L270160.jar             (object_storage 暂缓)
+   10. run sh kDeploy.sh -hotfix 951-HOTFIX-FORBID_ATTACHMENT.jar                     (禁止上传， 注意：只能部署在对外接入网)
     
 
 
@@ -44,7 +45,7 @@ If you meet file conflict when Deploying hotfix, please use below command. Be ca
 
 ## Server.conf
 
-    #com.kintana.core.server.OBJECT_STORAGE_ADAPTER_CLASS=com.kintana.core.util.ObjectStorageUtils
+    #com.kintana.core.server.OBJECT_STORAGE_ADAPTER_CLASS=com.kintana.core.util.ObjectStorageUtils  (注意要DMS配置要用JDBC方式)
 	com.kintana.core.server.ENABLE_IMPORT_EXPORT_EXCEL_IN_WORKPLAN=true	
 	
 
