@@ -29,6 +29,7 @@ If you meet file conflict when Deploying hotfix, please use below command. Be ca
     8. run sh kDeploy.sh -i PluginQualityVPQ                                          (需求验收#69_测试管理度量)
 	9. run sh kDeploy.sh -hotfix 951-HOTFIX-QCIM1L270160-QCCR1L270160.jar             (object_storage 暂缓)
     10. run sh kDeploy.sh -hotfix 951-HOTFIX-FORBID_ATTACHMENT.jar                     (禁止上传， 注意：只能部署在对外接入网)
+	11. run sh kDeploy.sh -hotfix 951-HOTFIX-MODULE_STATISTICS.jar                     (需求验收#116_模块统计)
     
 
 
@@ -41,6 +42,8 @@ If you meet file conflict when Deploying hotfix, please use below command. Be ca
 	6. 执行 ppm_object_storage_952_1.sql       (object_storage 暂缓)
 	7. 执行 cc_tasks_progress_by_month.sql     (需求验收#74_项目周报)
 	8. 执行 cc_resources_by_month_v.sql        (需求验收#77_项目投入统计)
+	9. 执行 PPM_MODULE_STATISTICS.sql          (需求验收#116_模块统计)
+	10.执行 knta_services_nls_module_statistics.sql (需求验收#116_模块统计)
 	
 
 ## Server.conf
