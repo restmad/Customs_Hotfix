@@ -65,5 +65,6 @@ BEGIN
 	
 	DBMS_OUTPUT.PUT_LINE('File ' || SCRIPT_NAME || ' completed at ' || TO_CHAR(CURRENT_DATE, 'MON-DD-YYYY HH24:MI:SS'));
 END;
+/
 
 commit;
