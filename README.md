@@ -44,6 +44,7 @@ If you meet file conflict when Deploying hotfix, please use below command. Be ca
 	8. 执行 cc_resources_by_month_v.sql        (需求验收#77_项目投入统计)
 	9. 执行 PPM_MODULE_STATISTICS.sql          (需求验收#116_模块统计)
 	10.执行 knta_services_nls_module_statistics.sql (需求验收#116_模块统计)
+	11.执行 WP_TASKS.sql        			    (需求验收#30_导入项目计划)
 	
 
 ## Server.conf
