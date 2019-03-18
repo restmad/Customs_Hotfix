@@ -24,12 +24,14 @@ If you meet file conflict when Deploying hotfix, please use below command. Be ca
     3. run sh kDeploy.sh -hotfix 951-HOTFIX-TAILOR.jar                                (需求验收#40_制定裁剪报告)
     4. run sh kDeploy.sh -hotfix 951-HOTFIX-RISK_TIMESHEET.jar                        (需求验收#20_个人周报)
     5. run sh kDeploy.sh -legacy-hotfix  951-HOTFIX-QCIM1L10000-QCCR1L10000-V2.jar    (需求验收#12_管理信息)
-    6. run sh kDeploy.sh -legacy-hotfix  951-HOTFIX-QCIM1L10002-V3.jar                (需求验收#37_基线管理)
+    6. run sh kDeploy.sh -legacy-hotfix  951-HOTFIX-QCIM1L10002-V4.jar                (需求验收#37_基线管理)
     7. run sh kDeploy.sh -i PluginQuality                                             (需求验收#69_测试管理度量)
     8. run sh kDeploy.sh -i PluginQualityVPQ                                          (需求验收#69_测试管理度量)
 	9. run sh kDeploy.sh -hotfix 951-HOTFIX-QCIM1L270160-QCCR1L270160.jar             (object_storage 暂缓)
-    10. run sh kDeploy.sh -hotfix 951-HOTFIX-FORBID_ATTACHMENT.jar                     (禁止上传， 注意：只能部署在对外接入网)
-	11. run sh kDeploy.sh -hotfix 951-HOTFIX-MODULE_STATISTICS.jar                     (需求验收#116_模块统计)
+    10. run sh kDeploy.sh -hotfix 951-HOTFIX-FORBID_ATTACHMENT.jar                    (禁止上传， 注意：只能部署在对外接入网)
+	11. run sh kDeploy.sh -hotfix 951-HOTFIX-MODULE_STATISTICS.jar                    (需求验收#116_模块统计)
+	12. run sh kDeploy.sh -legacy-hotfix 951-HOTFIX-TINY_PROJECT-V1.jar               (需求管理#极简项目)
+	13. run sh kDeploy.sh -i ALM                                                      (需求验收#124_ALM集成)
     
 
 
