@@ -30,7 +30,7 @@ If you meet file conflict when Deploying hotfix, please use below command. Be ca
 	9. run sh kDeploy.sh -hotfix 951-HOTFIX-QCIM1L270160-QCCR1L270160.jar             (object_storage 暂缓)
     10. run sh kDeploy.sh -hotfix 951-HOTFIX-FORBID_ATTACHMENT.jar                    (禁止上传， 注意：只能部署在对外接入网)
 	11. run sh kDeploy.sh -hotfix 951-HOTFIX-MODULE_STATISTICS.jar                    (需求验收#116_模块统计)
-	12. run sh kDeploy.sh -legacy-hotfix 951-HOTFIX-TINY_PROJECT-V1.jar               (需求管理#极简项目)
+	12. run sh kDeploy.sh -legacy-hotfix 951-HOTFIX-TINY_PROJECT-V2.jar               (需求管理#极简项目)
 	13. run sh kDeploy.sh -i ALM                                                      (需求验收#124_ALM集成)
 	14. run sh kDeploy.sh -hotfix 951-HOTFIX-MILESTONE.jar                            (项目集milestone问题)
     
