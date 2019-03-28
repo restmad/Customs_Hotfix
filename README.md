@@ -33,7 +33,7 @@ If you meet file conflict when Deploying hotfix, please use below command. Be ca
 	12. run sh kDeploy.sh -legacy-hotfix 951-HOTFIX-TINY_PROJECT-V2.jar               (需求管理#极简项目)
 	13. run sh kDeploy.sh -i ALM                                                      (需求验收#124_ALM集成)
 	14. run sh kDeploy.sh -hotfix 951-HOTFIX-MILESTONE.jar                            (项目集milestone问题)
-    
+    15. run sh kDeploy.sh -legacy-hotfix 951-HOTFIX-CALENDAR-V1.jar                   (日历图)
 
 
 ## Run Script Steps:
