@@ -35,6 +35,7 @@ If you meet file conflict when Deploying hotfix, please use below command. Be ca
 	14. run sh kDeploy.sh -hotfix 951-HOTFIX-MILESTONE.jar                            (项目集milestone问题)
     15. run sh kDeploy.sh -legacy-hotfix 951-HOTFIX-CALENDAR-V1.jar                   (需求管理#日历图)
 	16. run sh kDeploy.sh -legacy-hotfix 951-HOTFIX-DEFAULT_EFFORTS-V1.jar    		  (需求管理#工时默认值)
+	17. run sh kDeploy.sh -hotfix 951-HOTFIX-SMTP.jar                                 (邮件服务器问题)
 
 
 ## Run Script Steps:

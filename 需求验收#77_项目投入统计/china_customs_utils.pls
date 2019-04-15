@@ -11,6 +11,13 @@ CREATE OR REPLACE PACKAGE china_customs_utils AS
   RETURN NUMBER;
 
   PRAGMA RESTRICT_REFERENCES(Get_Resource_Actuals, WNDS, WNPS);
+  
+  
+   FUNCTION Get_OrgUnit_Path
+  (p_org_unit_id   IN NUMBER)
+  RETURN VARCHAR2;
+
+  PRAGMA RESTRICT_REFERENCES(Get_OrgUnit_Path, WNDS, WNPS);
 
 
 END china_customs_utils;

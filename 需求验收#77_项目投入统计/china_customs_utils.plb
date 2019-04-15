@@ -52,7 +52,23 @@ BEGIN
 
     return(l_total);
 
-END;
+END Get_Resource_Actuals;
+
+
+FUNCTION Get_OrgUnit_Path
+  (p_org_unit_id   IN NUMBER)
+  RETURN VARCHAR2
+  
+  IS
+  
+  l_path VARCHAR2(300);
+  
+BEGIN
+	select listagg(org_unit_name, '->') within group (order by rownum) into l_path from krsc_org_units start with  ORG_UNIT_ID = p_org_unit_id Connect By  Prior PARENT_ORG_UNIT_ID = ORG_UNIT_ID;
+  
+  return l_path;
+
+END Get_OrgUnit_Path;
 
 END china_customs_utils;
 /
