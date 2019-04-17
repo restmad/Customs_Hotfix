@@ -36,6 +36,9 @@ If you meet file conflict when Deploying hotfix, please use below command. Be ca
     15. run sh kDeploy.sh -legacy-hotfix 951-HOTFIX-CALENDAR-V1.jar                   (需求管理#日历图)
 	16. run sh kDeploy.sh -legacy-hotfix 951-HOTFIX-DEFAULT_EFFORTS-V1.jar    		  (需求管理#工时默认值)
 	17. run sh kDeploy.sh -hotfix 951-HOTFIX-SMTP.jar                                 (邮件服务器问题)
+	18. run sh kDeploy.sh -hotfix 951-HOTFIX-BASELINECOMPARE.jar                      (需求管理#基线对比)
+	19. run sh kDeploy.sh -hotfix 951-HOTFIX-STARTEAM.jar                             (需求管理#上传starteam) 
+	
 
 
 ## Run Script Steps:
@@ -50,6 +53,7 @@ If you meet file conflict when Deploying hotfix, please use below command. Be ca
 	9. 执行 PPM_MODULE_STATISTICS.sql          (需求验收#116_模块统计)
 	10.执行 knta_services_nls_module_statistics.sql (需求验收#116_模块统计)
 	11.执行 WP_TASKS.sql        			    (需求验收#30_导入项目计划)
+	12.执行 update_ALM.sql                      (需求验收#124_ALM集成)
 	
 
 ## Server.conf
