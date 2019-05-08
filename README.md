@@ -37,7 +37,7 @@ If you meet file conflict when Deploying hotfix, please use below command. Be ca
 	16. run sh kDeploy.sh -legacy-hotfix 951-HOTFIX-DEFAULT_EFFORTS-V1.jar    		  (需求管理#工时默认值)
 	17. run sh kDeploy.sh -hotfix 951-HOTFIX-SMTP.jar                                 (邮件服务器问题)
 	18. run sh kDeploy.sh -hotfix 951-HOTFIX-BASELINECOMPARE.jar                      (需求管理#基线对比)
-	19. run sh kDeploy.sh -hotfix 951-HOTFIX-STARTEAM.jar                             (需求管理#上传starteam) 
+	19. run sh kDeploy.sh -legacy-hotfix 951-HOTFIX-STARTEAM.jar                      (需求管理#上传starteam) 
 	
 
 
