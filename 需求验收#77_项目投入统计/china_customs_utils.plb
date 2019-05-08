@@ -70,6 +70,77 @@ BEGIN
 
 END Get_OrgUnit_Path;
 
+
+FUNCTION Get_Project_Schedule_Efforts
+  (p_project_id  IN NUMBER)
+  RETURN NUMBER
+  
+  IS
+  
+  l_efforts NUMBER;
+  
+  BEGIN
+  
+	BEGIN
+		SELECT TS.SCHED_EFFORT INTO l_efforts
+           FROM WP_TASKS T, PM_WORK_PLANS WP, WP_TASK_SCHEDULE TS
+          WHERE     T.WORK_PLAN_ID = WP.WORK_PLAN_ID
+                AND TS.TASK_SCHEDULE_ID = T.TASK_SCHEDULE_ID
+                AND WP.ENTITY_TYPE = 'BASE_LINE'
+                AND WP.IS_ACTIVE_FLAG = 'Y'
+                AND T.OUTLINE_LEVEL = 1
+                AND WP.PROJECT_ID =p_project_id;
+	EXCEPTION  
+		WHEN NO_DATA_FOUND THEN 
+		l_efforts := 0;
+	END;
+	
+	BEGIN  
+	   IF l_efforts = 0 THEN
+   		SELECT TS.SCHED_EFFORT INTO l_efforts
+           FROM WP_TASKS T, PM_WORK_PLANS WP, WP_TASK_SCHEDULE TS
+          WHERE     T.WORK_PLAN_ID = WP.WORK_PLAN_ID
+                AND TS.TASK_SCHEDULE_ID = T.TASK_SCHEDULE_ID
+                AND WP.ENTITY_TYPE = 'WORK_PLAN'
+                AND T.OUTLINE_LEVEL = 1
+                AND WP.PROJECT_ID =p_project_id;	 
+	   END IF;
+	EXCEPTION  
+		WHEN NO_DATA_FOUND THEN 
+		l_efforts := 0;
+	END;
+	
+    return l_efforts;
+	
+END Get_Project_Schedule_Efforts;
+
+
+FUNCTION Get_Project_Remaining_Efforts
+  (p_project_id  IN NUMBER)
+  RETURN NUMBER
+  
+  IS
+  
+  l_efforts NUMBER;
+  BEGIN
+  
+	BEGIN
+		SELECT TA.EST_REM_EFFORT INTO l_efforts
+           FROM WP_TASKS T, PM_WORK_PLANS WP, WP_TASK_ACTUALS TA
+          WHERE     T.WORK_PLAN_ID = WP.WORK_PLAN_ID
+                AND TA.ACTUALS_ID = T.TASK_ACTUALS_ID
+                AND WP.ENTITY_TYPE = 'WORK_PLAN'
+                AND T.OUTLINE_LEVEL = 1
+                AND WP.PROJECT_ID =p_project_id;
+	EXCEPTION  
+		WHEN NO_DATA_FOUND THEN 
+		l_efforts := 0;
+	END;
+	
+  return l_efforts;
+	
+END Get_Project_Remaining_Efforts;
+
 END china_customs_utils;
 /
 

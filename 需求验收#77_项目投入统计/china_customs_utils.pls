@@ -18,6 +18,18 @@ CREATE OR REPLACE PACKAGE china_customs_utils AS
   RETURN VARCHAR2;
 
   PRAGMA RESTRICT_REFERENCES(Get_OrgUnit_Path, WNDS, WNPS);
+  
+  FUNCTION Get_Project_Schedule_Efforts
+   (p_project_id  IN NUMBER)
+  RETURN NUMBER;
+
+  PRAGMA RESTRICT_REFERENCES(Get_Project_Schedule_Efforts, WNDS, WNPS);
+  
+  FUNCTION Get_Project_Remaining_Efforts
+   (p_project_id  IN NUMBER)
+  RETURN NUMBER;
+
+  PRAGMA RESTRICT_REFERENCES(Get_Project_Remaining_Efforts, WNDS, WNPS);
 
 
 END china_customs_utils;
